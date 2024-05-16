@@ -1,6 +1,6 @@
 {
 	"name": "@rbxts/spark",
-	"version": "0.2.1-ts.0",
+	"version": "0.2.1-ts.1",
 	"main": "out/init.lua",
 	"scripts": {
 		"build": "rbxtsc",
