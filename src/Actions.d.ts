@@ -5,7 +5,7 @@ import type { Signal } from "./Signal";
 export declare class Actions<T extends string | number> {
 	axis2d(action: T): Vector2;
 	clampedAxis2d(action: T): Vector2;
-	hold(action: T): void;
+	hold(action: T): () => void;
 	justPressedSignal(action: T): Signal;
 	justReleasedSignal(action: T): Signal;
 	move(action: T, vector2: Vector2): Vector2;

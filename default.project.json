@@ -1,6 +1,6 @@
 {
-    "name": "spark",
-    "tree": {
-        "$path": "out"
-    }
+	"name": "spark",
+	"tree": {
+		"$path": "out"
+	}
 }
