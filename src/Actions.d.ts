@@ -1,19 +1,25 @@
-import type { InputMap } from "./InputMap";
+import { Device, Input } from ".";
+import { Bindings } from "./Binding/Bindings";
 import type { InputState } from "./InputState";
 import type { Signal } from "./Signal";
 
 export declare class Actions<T extends string | number> {
-	axis2d(action: T): Vector2;
-	clampedAxis2d(action: T): Vector2;
-	hold(action: T): () => void;
-	justPressedSignal(action: T): Signal;
-	justReleasedSignal(action: T): Signal;
-	move(action: T, vector2: Vector2): Vector2;
-	normalizedAxis2d(action: T): Vector2;
-	pressed(action: T): boolean;
-	released(action: T): boolean;
-	update(inputState: InputState, inputMap: InputMap<T>): void;
-	value(action: T): number;
+    axis(action: T): number;
+    axis2d(action: T): Vector2;
+    clampedAxis2d(action: T): Vector2;
+    getInputsByDevices(action: T, devices: Device[]): Input[];
+    justPressedSignal(action: T): Signal;
+    justReleasedSignal(action: T): Signal;
+    moveAxis(action: T, value: number): void;
+    moveAxis2d(action: T, vector2: Vector2): void;
+    normalizedAxis2d(action: T): Vector2;
+    pressed(action: T): boolean;
+    rebuildBindings(): void;
+    released(action: T): boolean;
+    removeAssociatedGamepad(): void;
+    setAssociatedGamepad(gamepad: Enum.UserInputType): void;
+    setRebuildBindings(rebuildBindings: (bindings: Bindings<T>) => void): this;
+    update(inputState: InputState): void;
 
-	constructor(actions: readonly T[]);
+    constructor(actions: readonly T[]);
 }
