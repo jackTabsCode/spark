@@ -7,6 +7,7 @@ export declare class Actions<T extends string | number> {
     axis(action: T): number;
     axis2d(action: T): Vector2;
     clampedAxis2d(action: T): Vector2;
+    press(action: T): void;
     getInputsByDevices(action: T, devices: Device[]): Input[];
     justPressedSignal(action: T): Signal;
     justReleasedSignal(action: T): Signal;
